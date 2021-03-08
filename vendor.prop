@@ -162,6 +162,9 @@ ro.vendor.fingerprint.max_enrollments=3
 # Fs-verity
 ro.apk_verity.mode=2
 
+# FUSE passthrough
+persist.sys.fuse.passthrough.enable=true
+
 # Gatekeeper
 ro.hardware.gatekeeper=mdfpp
 
