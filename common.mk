@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-COMMON_PATH := device/samsung/sm7125-common
+COMMON_PATH := device/samsung/sm7225-common
 
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
@@ -171,7 +171,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    vendor.samsung.hardware.biometrics.fingerprint@3.0-service.sm7125
+    vendor.samsung.hardware.biometrics.fingerprint@3.0-service.sm7225
 
 # fastbootd
 PRODUCT_PACKAGES += \
@@ -223,7 +223,7 @@ PRODUCT_PACKAGES += \
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7125
+    vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7225
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -379,7 +379,7 @@ PRODUCT_PACKAGES += \
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator-service.sm7125
+    android.hardware.vibrator-service.sm7225
 
 # Tether
 PRODUCT_PACKAGES += \
@@ -434,4 +434,4 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
 # Inherit proprietary blobs
-$(call inherit-product, vendor/samsung/sm7125-common/sm7125-common-vendor.mk)
+$(call inherit-product, vendor/samsung/sm7225-common/sm7225-common-vendor.mk)

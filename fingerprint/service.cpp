@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vendor.samsung.hardware.biometrics.fingerprint@3.0-service.sm7125"
+#define LOG_TAG "vendor.samsung.hardware.biometrics.fingerprint@3.0-service.sm7225"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
