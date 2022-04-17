@@ -69,6 +69,10 @@ function blob_fixup() {
             # Replace SlotID prop
             sed -i 's/ril.dds.call.ongoing/vendor.calls.ongoing/g' "${2}"
             ;;
+        vendor/lib/hw/audio.primary.lito.so)
+            "${PATCHELF}" --add-needed "libshim_samsungaudioparams.so" "${2}"
+            sed -i 's/str_parms_get_int/str_parms_get_mod/g' "${2}"
+            ;;
         vendor/lib64/hw/gatekeeper.mdfpp.so|vendor/lib64/libskeymaster4device.so|vendor/lib64/libkeymaster_helper.so|vendor/lib/libwvhidl.so|vendor/lib/mediadrm/libwvdrmengine.so)
             "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
