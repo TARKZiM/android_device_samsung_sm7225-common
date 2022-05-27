@@ -1,0 +1,25 @@
+on early-init
+
+# A4260 (Hong Kong)
+on fs && property:ro.boot.rp=1 && property:ro.product.vendor.model=SM-A4260
+    mount none /vendor/firmware/ipa/a4260/ipa_fws.b01 /vendor/firmware/ipa_fws.b01 bind
+    mount none /vendor/firmware/ipa/a4260/ipa_fws.elf /vendor/firmware/ipa_fws.elf bind
+    mount none /vendor/firmware/ipa/a4260/ipa_fws.mdt /vendor/firmware/ipa_fws.mdt bind
+    mount none /vendor/firmware/ipa/a4260/lagoon_ipa_fws.b01 /vendor/firmware/lagoon_ipa_fws.b01 bind
+    mount none /vendor/firmware/ipa/a4260/lagoon_ipa_fws.elf /vendor/firmware/lagoon_ipa_fws.elf bind
+    mount none /vendor/firmware/ipa/a4260/lagoon_ipa_fws.mdt /vendor/firmware/lagoon_ipa_fws.mdt bind
+    write /dev/ipa 1
+
+# A426N
+on fs && property:ro.product.vendor.model=SM-A426N
+    write /dev/ipa 1
+
+on fs && property:ro.product.vendor.model=SM-A426U
+    write /dev/ipa 1
+
+on fs && property:ro.product.vendor.model=SM-M426B
+    write /dev/ipa 1
+
+# Use a4260 bootloader revision 3 firmware by default
+on fs && property:ro.product.vendor.model=SM-A426B
+    write /dev/ipa 1
