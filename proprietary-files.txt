@@ -965,7 +965,7 @@ vendor/lib64/libnetmgr.so
 vendor/lib64/libnetmgr_common.so
 vendor/lib/libqrtr.so
 vendor/lib64/libqrtr.so
-vendor/lib64/libsec-ril.so
+vendor/lib64/libsec-ril.so|e36073a0b4f38dc110e11f639f6b3dbe99a16985
 vendor/lib64/libsecril-client.so
 vendor/lib/libsystem_health_mon.so
 vendor/lib64/libsystem_health_mon.so
