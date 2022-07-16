@@ -35,11 +35,11 @@
     </path>
 
     <path name="speaker-and-usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="64" />
+        <ctl name="Headset Playback Volume" value="71" />
     </path>
 
     <path name="dual-speaker-and-usb-headphones-gain">
-        <ctl name="Headset Playback Volume" value="64" />
+        <ctl name="Headset Playback Volume" value="110" />
     </path>
 
     <path name="fm-usb-headphones-gain">
@@ -85,11 +85,11 @@
 
     <!-- call Scenario -->
     <path name="call-usb-headset-gain">
-        <ctl name="Headset Playback Volume" value="120" />
+        <ctl name="Headset Playback Volume" value="119" />
     </path>
 
     <path name="call-usb-headset-mic-gain">
-        <ctl name="Headset Capture Volume" value="104" />
+        <ctl name="Headset Capture Volume" value="120" />
     </path>
 
     <path name="call-usb-headphone-mic-gain">
@@ -100,7 +100,7 @@
     </path>
 
     <path name="wifi-call-usb-headset-mic-gain">
-        <ctl name="Headset Capture Volume" value="104" />
+        <ctl name="Headset Capture Volume" value="120" />
     </path>
 
     <path name="wifi-call-headphone-mic-gain">

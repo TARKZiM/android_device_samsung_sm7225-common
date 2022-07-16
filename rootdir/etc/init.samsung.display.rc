@@ -40,7 +40,6 @@ on init
 	chown system media_rw /sys/class/mdnie/mdnie/outdoor
 	chown system system  /sys/class/mdnie/mdnie/mdnie_temp
 	chown system media_rw /sys/class/mdnie/mdnie/mode
-	chown system system /sys/class/mdnie/mdnie/mode_max
 	chown system system /sys/class/mdnie/mdnie/negative
 	chown system media_rw /sys/class/mdnie/mdnie/playspeed
 	chown system media_rw /sys/class/mdnie/mdnie/accessibility
@@ -284,7 +283,7 @@ on init
 
 	chown system system /sys/class/lcd/panel1/poc_info
 	chmod 0440 /sys/class/lcd/panel1/poc_info
-
+	
 # POC OFF
 	chown system system /sys/class/lcd/panel/poc_onoff
 	chmod 0660 /sys/class/lcd/panel/poc_onoff
@@ -354,7 +353,7 @@ on init
 	chown system system /sys/class/lcd/panel/copr
 	chmod 0660 /sys/class/lcd/panel/copr
 	chown system system /sys/class/lcd/panel/brt_avg
-	chmod 0660 /sys/class/lcd/panel/brt_avg
+	chmod 0440 /sys/class/lcd/panel/brt_avg
 
 	chown system system /sys/class/lcd/panel1/copr_roi
 	chmod 0660 /sys/class/lcd/panel1/copr_roi
@@ -363,7 +362,7 @@ on init
 	chown system system /sys/class/lcd/panel1/copr
 	chmod 0660 /sys/class/lcd/panel1/copr
 	chown system system /sys/class/lcd/panel1/brt_avg
-	chmod 0660 /sys/class/lcd/panel1/brt_avg
+	chmod 0440 /sys/class/lcd/panel1/brt_avg
 
 # SELF MASK
 	chown system system /sys/class/lcd/panel/self_mask
@@ -408,7 +407,13 @@ on init
 	chmod 0660 /sys/class/lcd/panel/mask_brightness
 
 	chown system system /sys/class/lcd/panel/actual_mask_brightness
-	chmod 0660 /sys/class/lcd/panel/actual_mask_brightness
+	chmod 0440 /sys/class/lcd/panel/actual_mask_brightness
+
+	chown system system /sys/class/lcd/panel1/mask_brightness
+	chmod 0660 /sys/class/lcd/panel1/mask_brightness
+
+	chown system system /sys/class/lcd/panel1/actual_mask_brightness
+	chmod 0440 /sys/class/lcd/panel1/actual_mask_brightness
 
 # UB CONN DET
 	chown system system /sys/class/lcd/panel/conn_det
@@ -475,7 +480,7 @@ on init
 	chown system system /sys/class/lcd/panel/motto/emphasis
 	chmod 0660 /sys/class/lcd/panel/motto/emphasis
 
-# ioctl_power_ctrl
+# ioctl_power_ctrl  
 	chown system system /sys/class/lcd/panel/ioctl_power_ctrl
 	chmod 0440 /sys/class/lcd/panel/ioctl_power_ctrl
 
@@ -487,3 +492,7 @@ on init
 	chmod 0440 /sys/class/lcd/panel/SVC_OCTA_DDI_CHIPID
 	chown system system /sys/class/lcd/panel1/SVC_OCTA_DDI_CHIPID
 	chmod 0440 /sys/class/lcd/panel1/SVC_OCTA_DDI_CHIPID
+
+# debug information for dumpstate
+	chown system system /dev/sec_display_debug
+	chmod 0660 /dev/sec_display_debug
