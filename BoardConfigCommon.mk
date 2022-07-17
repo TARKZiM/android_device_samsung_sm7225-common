@@ -64,7 +64,7 @@ TARGET_KERNEL_HEADER_ARCH   := arm64
 TARGET_LINUX_KERNEL_VERSION := 4.19
 
 # Kernel flags
-BOARD_KERNEL_CMDLINE += console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 swiotlb=1 androidboot.usbcontroller=a600000.dwc3 printk.devkmsg=on firmware_class.path=/vendor/firmware_mnt/image
+BOARD_KERNEL_CMDLINE += console=null androidboot.hardware=qcom androidboot.memcg=1 lpm_levels.sleep_disabled=1 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237 service_locator.enable=1 androidboot.usbcontroller=a600000.dwc3 swiotlb=2048 cgroup.memory=nokmem,nosocket firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_BOOTIMG_HEADER_VERSION := 2
 
@@ -105,7 +105,7 @@ TARGET_USERIMAGES_USE_F2FS           := true
 TARGET_USERIMAGES_USE_EXT4           := true
 
 # Partition sizes, obtained with blockdev --getsize64
-BOARD_DTBOIMG_PARTITION_SIZE       := 25165824
+BOARD_DTBOIMG_PARTITION_SIZE       := 8388608
 BOARD_BOOTIMAGE_PARTITION_SIZE     := 100663296
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 81788928
 BOARD_CACHEIMAGE_PARTITION_SIZE    := 629145600
@@ -173,10 +173,10 @@ TARGET_DISABLED_UBWC := true
 BOARD_USES_ADRENO := true
 
 # Fingerprint
-BUILD_FINGERPRINT := "samsung/a52qnsxx/qssi:12/SP1A.210812.016/A525FXXS4BVA2:user/release-keys"
-PRIVATE_BUILD_DESC := "a52qnsxx-user 12 SP1A.210812.016 A525FXXS4BVA2 release-keys"
+BUILD_FINGERPRINT := "samsung/a42xqxx/a42xq:11/RP1A.200720.012/A426BXXU3DVE2:user/release-keys"
+PRIVATE_BUILD_DESC := "a42xqxx-user 12 SP1A.210812.016 A426BXXU3DVE2 release-keys"
 
-VENDOR_SECURITY_PATCH := 2022-01-01
+VENDOR_SECURITY_PATCH := 2022-05-01
 
 # FM
 BOARD_HAS_QCA_FM_SOC := cherokee
