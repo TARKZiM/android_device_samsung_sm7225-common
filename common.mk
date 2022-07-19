@@ -182,7 +182,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    vendor.samsung.hardware.biometrics.fingerprint@3.0-service.sm7225
+    android.hardware.biometrics.fingerprint@2.3-service-samsung.sm7225
 
 # fastbootd
 PRODUCT_PACKAGES += \
