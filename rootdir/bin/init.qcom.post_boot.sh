@@ -855,11 +855,10 @@ function enable_memory_features()
 function start_hbtp()
 {
         # Start the Host based Touch processing but not in the power off mode.
-#        bootmode=`getprop ro.bootmode`
-#        if [ "charger" != $bootmode ]; then
-#               start vendor.hbtp
-#        fi
-	echo "do not start hbtp"
+        bootmode=`getprop ro.bootmode`
+        if [ "charger" != $bootmode ]; then
+                start vendor.hbtp
+        fi
 }
 
 case "$target" in
@@ -2825,6 +2824,9 @@ case "$target" in
                 ;;
             esac
 
+	    # Disable cdsprpcd daemon for sdm630
+	    setprop vendor.fastrpc.disable.cdsprpcd.daemon 1
+
             # Setting b.L scheduler parameters
             echo 85 > /proc/sys/kernel/sched_upmigrate
             echo 85 > /proc/sys/kernel/sched_downmigrate
@@ -3308,21 +3310,6 @@ case "$target" in
       echo "0:1209600" > /sys/module/cpu_boost/parameters/input_boost_freq
       echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
 
-      # performance tuning
-      chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq
-      chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/max_freq
-      chmod 0664 /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-      chmod 0664 /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
-      chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/min_freq
-      chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/max_freq
-
-      chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq
-      chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/max_freq
-      chown system.system /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-      chown system.system /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
-      chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/min_freq
-      chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/max_freq
-
       # Set Memory parameters
       configure_memory_parameters
 
@@ -3421,22 +3408,6 @@ case "$target" in
             echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
             echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
-            # configure governor permissions for little cluster
-            chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-            chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-            chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
-            chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-            chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-            chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
-            
-            # configure governor permissions for big cluster
-            chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
-            chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
-            chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/pl
-            chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
-            chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
-            chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/pl
-
             echo "0:1248000" > /sys/module/cpu_boost/parameters/input_boost_freq
             echo 40 > /sys/module/cpu_boost/parameters/input_boost_ms
 
@@ -3510,36 +3481,6 @@ case "$target" in
           ;;
         esac
 
-        # configure governor permissions for little cluster
-        chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-        chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-        chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
-        
-        # configure governor permissions for big cluster
-        chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
-        chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
-        chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/pl
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/pl
-
-        # Change power debug parameters permission
-        chown radio.system /sys/module/qpnp_power_on/parameters/reset_enabled
-        chown radio.system /sys/module/qpnp_power_on/parameters/wake_enabled
-        chown radio.system /sys/module/lpm_levels/parameters/secdebug
-        chown radio.system /sys/module/qpnp_power_on/parameters/pmic_dump
-        chmod 664 /sys/module/qpnp_power_on/parameters/reset_enabled
-        chmod 664 /sys/module/qpnp_power_on/parameters/wake_enabled
-        chmod 664 /sys/module/lpm_levels/parameters/secdebug
-        chmod 664 /sys/module/qpnp_power_on/parameters/pmic_dump
-        chown radio.system /sys/power/volkey_wakeup
-        chmod 0660 /sys/power/volkey_wakeup
-
-        # Volume down key(connect to PMIC RESIN) wakeup enable/disable
-        echo 0 > /sys/power/volkey_wakeup
     ;;
 esac
 
@@ -3708,10 +3649,6 @@ case "$target" in
         setprop vendor.dcvs.prop 0
         setprop vendor.dcvs.prop 1
 
-        # cpuset parameters
-        echo 0-5 > /dev/cpuset/background/cpus
-        echo 0-5 > /dev/cpuset/system-background/cpus
-
         # Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
 
@@ -3856,8 +3793,8 @@ case "$target" in
         setprop vendor.dcvs.prop 1
 
         # cpuset parameters
-        echo 0-5 > /dev/cpuset/background/cpus
-        echo 0-5 > /dev/cpuset/system-background/cpus
+        echo 0-3 > /dev/cpuset/background/cpus
+        echo 0-3 > /dev/cpuset/system-background/cpus
 
         # Turn off scheduler boost at the end
         echo 0 > /proc/sys/kernel/sched_boost
@@ -3915,6 +3852,9 @@ case "$target" in
             echo 1401600 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/hispeed_freq
             echo 1056000 > /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq
             echo 0 > /sys/devices/system/cpu/cpu4/cpufreq/schedutil/rtg_boost_freq
+
+            echo "0:1017600" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
+            echo 80 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
 
 	    echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
@@ -3986,7 +3926,7 @@ case "$target" in
 
         # Scuba perf/power tunings
         case "$soc_id" in
-             "441" )
+             "441" | "473" | "474" )
 
             # Quad-core device. disable core_ctl
             echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
@@ -4172,26 +4112,15 @@ case "$target" in
     # device/target specific folder
     setprop vendor.dcvs.prop 1
 
+    # cpuset parameters
+    echo 0-5 > /dev/cpuset/background/cpus
+    echo 0-5 > /dev/cpuset/system-background/cpus
+
     # Turn off scheduler boost at the end
     echo 0 > /proc/sys/kernel/sched_boost
 
     # Turn on sleep modes
     echo 0 > /sys/module/lpm_levels/parameters/sleep_disabled
-    
-    # Change power debug parameters permission
-    chown radio.system /sys/module/qpnp_power_on/parameters/reset_enabled
-    chown radio.system /sys/module/qpnp_power_on/parameters/wake_enabled
-    chown radio.system /sys/module/lpm_levels/parameters/secdebug
-    chown radio.system /sys/module/qpnp_power_on/parameters/pmic_dump
-    chmod 664 /sys/module/qpnp_power_on/parameters/reset_enabled
-    chmod 664 /sys/module/qpnp_power_on/parameters/wake_enabled
-    chmod 664 /sys/module/lpm_levels/parameters/secdebug
-    chmod 664 /sys/module/qpnp_power_on/parameters/pmic_dump
-    chown radio.system /sys/power/volkey_wakeup
-    chmod 0660 /sys/power/volkey_wakeup
-
-    # Volume down key(connect to PMIC RESIN) wakeup enable/disable
-    echo 0 > /sys/power/volkey_wakeup    
   ;;
 esac
 

@@ -77,6 +77,10 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+on fs
+    chmod 0660 /sys/class/camera/flash/rear_flash
+    chown camera camera /sys/class/camera/flash/rear_flash
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
