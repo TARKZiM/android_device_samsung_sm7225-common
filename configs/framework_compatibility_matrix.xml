@@ -949,4 +949,13 @@
             <instance>imsd2</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.samsung.hardware.snap</name>
+        <transport>hwbinder</transport>
+        <version>1.2</version>
+        <interface>
+            <name>ISehSnap</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
