@@ -7,7 +7,7 @@ enum device_variant {
     VARIANT_A426B = 0,
     VARIANT_A426N,
     VARIANT_A426U,
-    VARIANT_M426B
+    VARIANT_M426B,
     VARIANT_MAX
 };
 
