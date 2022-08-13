@@ -26,6 +26,22 @@ using ::android::OK;
 const int kMaxCameraIdLen = 16;
 
 SamsungCameraProvider::SamsungCameraProvider() : LegacyCameraProviderImpl_2_5() {
+
+/**
+*    <local name="SUPPORT_BACK_DUAL_PORTRAIT" value="true"/>
+*    <local name="BACK_WIDE_CAMERA_ID" value="50"/>
+*    <local name="BACK_MACRO_CAMERA_ID" value="54"/>
+*    <local name="FRONT_CROP_FOV_CAMERA_ID" value="3"/>
+*/
+
+#ifdef SAMSUNG_SM7225_MODEL_a42xq
+    // wide
+    mExtraIDs.push_back(5);
+
+    // macro
+    mExtraIDs.push_back(54);
+#endif
+
     if (!mInitFailed) {
         for (int i : mExtraIDs) {
             struct camera_info info;
