@@ -79,7 +79,6 @@ persist.vendor.qcom.bluetooth.aac_vbr_ctl.enabled=false
 # Camera
 camera.disable_zsl_mode=1
 ro.camera.notify_nfc=1
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
 
 # Chipset
 ro.soc.manufacturer=Qualcomm
