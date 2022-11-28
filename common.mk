@@ -72,7 +72,6 @@ PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
     audio.r_submix.default \
     audio.usb.default \
-    libaudioalsa \
     libtinycompress \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -158,8 +157,8 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@3.0.vendor \
     libtinyxml \
     libtinyxml2 \
-    hwcomposer.lito \
     gralloc.lito \
+    hwcomposer.lito \
     memtrack.lito \
     libqdMetaData \
     libdisplayconfig.qti \
@@ -280,7 +279,6 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    android.hardware.omx@1.0-service \
     libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
@@ -374,7 +372,7 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@2.1-service.samsung-multihal \
+    android.hardware.sensors-service.samsung-multihal \
     android.hardware.sensors@2.0-ScopedWakelock.vendor
 
 # Touch features
