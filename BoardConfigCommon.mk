@@ -59,8 +59,6 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := := cortex-a55
 
 # Kernel config
 TARGET_KERNEL_CLANG_COMPILE := true
-# Build with Clang 11 for now
-TARGET_KERNEL_CLANG_VERSION := r383902
 TARGET_KERNEL_SOURCE        := kernel/samsung/sm7225
 TARGET_KERNEL_ARCH          := arm64
 TARGET_KERNEL_HEADER_ARCH   := arm64
@@ -198,8 +196,8 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.default
 
 # SePolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
-SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
+# BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
+# SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 
 # Treble
 BOARD_VNDK_VERSION := current
