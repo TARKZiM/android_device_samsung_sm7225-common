@@ -258,3 +258,8 @@ service goodixd /vendor/bin/goodixfingerprintd
     class late_start
     user system
     group media_rw system
+
+service xtra-daemon /vendor/bin/xtra-daemon
+    class late_start
+    user gps
+    group gps system
