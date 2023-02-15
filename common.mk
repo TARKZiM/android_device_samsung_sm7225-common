@@ -233,6 +233,10 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung \
     libkeymaster4_1support.vendor
 
+# Light
+PRODUCT_PACKAGES += \
+    android.hardware.light-V1-ndk_platform.vendor:64
+
 # LiveDisplay
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7225
