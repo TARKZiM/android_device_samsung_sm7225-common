@@ -1,7 +1,7 @@
 on early-init
 
 # A4260 (Hong Kong)
-on fs && property:ro.boot.rp=1 && property:ro.product.vendor.model=SM-A4260
+on fs && property:ro.product.vendor.model=SM-A4260
     mount none /vendor/firmware/ipa/a4260/ipa_fws.b01 /vendor/firmware/ipa_fws.b01 bind
     mount none /vendor/firmware/ipa/a4260/ipa_fws.elf /vendor/firmware/ipa_fws.elf bind
     mount none /vendor/firmware/ipa/a4260/ipa_fws.mdt /vendor/firmware/ipa_fws.mdt bind
