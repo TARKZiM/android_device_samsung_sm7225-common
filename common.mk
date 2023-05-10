@@ -49,7 +49,6 @@ PRODUCT_PACKAGES += \
     init.fingerprint.rc \
     init.ramplus.rc \
     init.target.rc \
-    ipa_fws.rc \
     ueventd.qcom.rc \
     wifi_qcom.rc \
     wifi_sec.rc \
