@@ -25,7 +25,7 @@ source "${HELPER}"
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib64/libskeymaster4device.so)
+        vendor/lib64/hw/gatekeeper.mdfpp.so|vendor/lib64/libskeymaster4device.so)
             "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
     esac
