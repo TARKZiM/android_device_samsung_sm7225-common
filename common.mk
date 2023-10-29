@@ -112,11 +112,9 @@ PRODUCT_PACKAGES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.provider@2.6-service.sm7225 \
+    android.hardware.camera.provider@2.5-service.samsung \
     libgrallocusage.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor \
-    android.hardware.camera.device@3.6.vendor \
-    android.hardware.camera.provider@2.6.vendor \
     android.frameworks.sensorservice@1.0.vendor
 
 # CAS
