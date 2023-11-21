@@ -36,7 +36,7 @@ cc_binary {
         "hidl_defaults",
         "samsung_sm7225_model_defaults",
     ],
-    compile_multilib: "both",
+    compile_multilib: "64",
     proprietary: true,
     relative_install_path: "hw",
     srcs: [
