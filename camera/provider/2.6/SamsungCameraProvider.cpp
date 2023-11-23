@@ -36,7 +36,7 @@ SamsungCameraProvider::SamsungCameraProvider() : LegacyCameraProviderImpl_2_5() 
 
 #ifdef SAMSUNG_SM7225_MODEL_a42xq
     // wide
-    mExtraIDs.push_back(5);
+    mExtraIDs.push_back(50);
 
     // macro
     mExtraIDs.push_back(54);
