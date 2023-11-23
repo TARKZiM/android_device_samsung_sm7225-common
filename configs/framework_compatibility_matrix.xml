@@ -167,6 +167,14 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="aidl" optional="true">
+        <name>android.hardware.power</name>
+       <version>3</version>
+        <interface>
+            <name>IPower</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <hal format="hidl" optional="true">
         <name>android.hardware.radio</name>
         <version>1.0-5</version>
@@ -970,6 +978,14 @@
         <version>2.0</version>
         <interface>
             <name>ISehHealth</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="aidl" optional="true">
+        <name>vendor.samsung.hardware.hyper</name>
+        <version>1</version>
+        <interface>
+            <name>ISehHyPer</name>
             <instance>default</instance>
         </interface>
     </hal>

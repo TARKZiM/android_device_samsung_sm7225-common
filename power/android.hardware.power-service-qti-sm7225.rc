@@ -1,0 +1,7 @@
+on init
+    chown system system /sys/class/sec/tsp/input/enabled
+
+service vendor.power /vendor/bin/hw/android.hardware.power-service-qti-sm7225
+    class hal
+    user system
+    group system

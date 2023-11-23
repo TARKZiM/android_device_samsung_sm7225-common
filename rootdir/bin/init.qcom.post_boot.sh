@@ -3719,49 +3719,6 @@ case "$target" in
         echo "0:1248000" > /sys/devices/system/cpu/cpu_boost/input_boost_freq
         echo 120 > /sys/devices/system/cpu/cpu_boost/input_boost_ms
 
-        # performance tuning
-        chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq
-        chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/max_freq
-        chmod 0664 /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-        chmod 0664 /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
-        chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/min_freq
-        chmod 0664 /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/max_freq
-
-        chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/min_freq
-        chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-ddr-latfloor/max_freq
-        chown system.system /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/min_freq
-        chown system.system /sys/class/devfreq/soc:qcom,cpu0-cpu-l3-lat/max_freq
-        chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/min_freq
-        chown system.system /sys/class/devfreq/soc:qcom,cpu6-cpu-l3-lat/max_freq
-
-        # configure governor permissions for little cluster
-        chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-        chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-        chown root.system /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/pl
-
-        # configure governor permissions for big cluster
-        chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
-        chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
-        chown root.system /sys/devices/system/cpu/cpufreq/policy6/schedutil/pl
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_freq
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load
-        chmod 0664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/pl
-
-        # Change power debug parameters permission
-        chown radio.system /sys/module/qpnp_power_on/parameters/reset_enabled
-        chown radio.system /sys/module/qpnp_power_on/parameters/wake_enabled
-        chown radio.system /sys/module/lpm_levels/parameters/secdebug
-        chown radio.system /sys/module/qpnp_power_on/parameters/pmic_dump
-        chmod 664 /sys/module/qpnp_power_on/parameters/reset_enabled
-        chmod 664 /sys/module/qpnp_power_on/parameters/wake_enabled
-        chmod 664 /sys/module/lpm_levels/parameters/secdebug
-        chmod 664 /sys/module/qpnp_power_on/parameters/pmic_dump
-        chown radio.system /sys/power/volkey_wakeup
-        chmod 0660 /sys/power/volkey_wakeup
-
         # Set Memory parameters
         configure_memory_parameters
 
