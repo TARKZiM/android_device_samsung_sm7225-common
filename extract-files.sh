@@ -78,6 +78,10 @@ function blob_fixup() {
         vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so|vendor/bin/hw/vendor.samsung.hardware.light-service)
             "${PATCHELF}" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
             ;;
+        vendor/bin/hw/macloader)
+            sed -i 's/vendor\.wifi\.dualconcurrent\.interface/vnedor\.wiff\.dualconcurreut\.iuterface/g' "${2}"
+            sed -i 's/ro\.vendor\.wifi\.sap\.interface/ru\.vnedor\.wiff\.sep\.iuterface/g' "${2}"
+            ;;
         *)
             return 1
             ;;
