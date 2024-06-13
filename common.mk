@@ -78,7 +78,8 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libqcompostprocbundle \
-    libvolumelistener
+    libvolumelistener \
+    libprocessgroup.vendor
 
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/audio/configs/audio_configs.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_configs.xml \
@@ -353,7 +354,8 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson
+    libjson \
+    libsqlite.vendor
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -375,7 +377,8 @@ PRODUCT_PACKAGES += \
     libsysutils.vendor:64 \
     libjsoncpp.vendor \
     libcurl.vendor \
-    secril_config_svc
+    secril_config_svc \
+    libjsoncpp.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -390,7 +393,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0.vendor \
     android.hardware.thermal@2.0.vendor \
-    android.frameworks.cameraservice.service@2.1.vendor
+    android.frameworks.cameraservice.service@2.1.vendor \
+    libcamera_metadata.vendor
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
