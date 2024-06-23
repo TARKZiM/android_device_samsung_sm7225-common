@@ -19,6 +19,9 @@ COMMON_PATH := device/samsung/sm7225-common
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Add common definitions for Qualcomm
+$(call inherit-product, hardware/qcom-caf/common/common.mk)
+
 DEVICE_PACKAGE_OVERLAYS += $(COMMON_PATH)/overlay
 
 # Partitions
