@@ -336,13 +336,8 @@ vendor/etc/sap.conf
 vendor/etc/xtwifi.conf
 
 # Health
-vendor/bin/hw/android.hardware.health@2.1-service-samsung
 vendor/bin/hvdcp_opti
-vendor/etc/init/android.hardware.health@2.1-service-samsung.rc
-vendor/etc/vintf/manifest/android.hardware.health@2.1-samsung.xml
 vendor/etc/charger_fstab.qti
-vendor/lib64/vendor.samsung.hardware.health@2.0.so
-vendor/lib64/hw/android.hardware.health@2.0-impl-2.1-samsung.so
 
 # IPA
 vendor/bin/ipacm-diag
