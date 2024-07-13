@@ -371,6 +371,10 @@ PRODUCT_PACKAGES += \
     libxml2 \
     librilutils \
     librmnetctl \
+    libsqlite.vendor:64 \
+    libsysutils.vendor:64 \
+    libjsoncpp.vendor \
+    libcurl.vendor \
     secril_config_svc
 
 # Sensors
@@ -381,6 +385,12 @@ PRODUCT_PACKAGES += \
 # Touch features
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.sm7225
+
+# Thermal
+PRODUCT_PACKAGES += \
+    android.hardware.thermal@1.0.vendor \
+    android.hardware.thermal@2.0.vendor \
+    android.frameworks.cameraservice.service@2.1.vendor
 
 # Vendor service manager
 PRODUCT_PACKAGES += \
