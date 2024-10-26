@@ -217,9 +217,6 @@ $(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH):libinit_sm7225)
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
 
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/init/android.hardware.gatekeeper@1.0-service.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/android.hardware.gatekeeper@1.0-service.rc
-
 # Lineage Health
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default

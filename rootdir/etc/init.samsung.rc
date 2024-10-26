@@ -60,6 +60,8 @@ on post-fs
    chmod 664 /sys/module/lpm_levels/parameters/secdebug
 
 on post-fs-data
+    mkdir /data/vendor/gatekeeper 0770 system system
+
     # carrier partition
     chown system system /carrier
     chmod 0771 /carrier
