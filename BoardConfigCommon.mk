@@ -72,6 +72,10 @@ BOARD_KERNEL_CMDLINE += console=null androidboot.hardware=qcom androidboot.memcg
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_BOOTIMG_HEADER_VERSION := 2
 
+# Kernel Clang Flags
+KERNEL_CC := CC=clang
+override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
+
 BOARD_KERNEL_BASE            := 0x00000000
 BOARD_KERNEL_PAGESIZE        := 4096
 BOARD_RAMDISK_OFFSET         := 0x02000000
