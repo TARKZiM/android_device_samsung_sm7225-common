@@ -138,6 +138,8 @@ on boot
 
 
 
+    setprop vendor.powerhal.init 1
+
 # for WIFI MAC address
     mkdir /mnt/vendor/efs/wifi 0755 wifi wifi
     chown wifi wifi /mnt/vendor/efs/wifi/.mac.info

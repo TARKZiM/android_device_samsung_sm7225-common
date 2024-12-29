@@ -60,7 +60,7 @@ on boot
     chown system system /sys/class/sensors/ssc_core/support_algo
     chown system system /sys/class/sensors/ssc_core/support_dual_sensor
     chown system radio /sys/class/sensors/ssc_core/abs_lcd_onoff
-    chown system radio /sys/class/sensors/ssc_core/lcd_onoff
+    chown system system /sys/class/sensors/ssc_core/lcd_onoff
     chown system radio /sys/class/sensors/ssc_core/algo_lcd_onoff
     chown system system /sys/class/sensors/ssc_core/sensor_dump
     chown system system /sys/class/sensors/ssc_core/ssc_firmware_info

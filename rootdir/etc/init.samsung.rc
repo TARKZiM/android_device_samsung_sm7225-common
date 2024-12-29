@@ -99,7 +99,7 @@ on early-boot
     chown system radio /sys/module/firmware_class/parameters/path
 
  # Permissions for Touchscreen
-    chown system radio /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/cmd
     chown system system /sys/class/sec/tsp/input/enabled
     chmod 0660 /sys/class/sec/tsp/input/enabled
     chown system system /sys/class/sec/tsp/enabled

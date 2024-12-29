@@ -12,9 +12,6 @@ persist.vendor.sec.fastchg_enabled               u:object_r:vendor_fastcharge_pr
 # Perf
 ro.vendor.extension_library                      u:object_r:vendor_mpctl_prop:s0
 
-# Power
-vendor.powerhal.                                 u:object_r:vendor_power_prop:s0
-
 # RIL
 ro.vendor.multisim.                              u:object_r:vendor_radio_prop:s0
 ro.vendor.radio.                                 u:object_r:vendor_radio_prop:s0
