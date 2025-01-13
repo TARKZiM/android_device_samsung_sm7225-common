@@ -841,6 +841,13 @@
          turned off and the screen off animation has been performed. -->
     <bool name="config_dozeAfterScreenOffByDefault">true</bool>
 
+    <!-- Whether to enable fp unlock when screen turns off on udfps devices -->
+    <bool name="config_screen_off_udfps_enabled">true</bool>
+
+    <!-- Default value for fp screen off unlock toggle, it only works for the devices that support
+         fp screen off unlock-->
+    <bool name="config_screen_off_udfps_default_on">false</bool>
+
     <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
          device from the display on/off state.
          When false, autosuspend_disable() will be called before the display is turned on
