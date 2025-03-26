@@ -426,13 +426,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.sm7225
 
-# Telephony
-PRODUCT_PACKAGES += \
-    telephony-ext
-
-PRODUCT_BOOT_JARS += \
-    telephony-ext
-
 #PRODUCT_PACKAGES += \
 #    PhhIms \
 #    PhhImsOverlay
