@@ -483,5 +483,8 @@ PRODUCT_SOONG_NAMESPACES += \
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
 
+# UDFPS
+$(call soong_config_set,surfaceflinger,udfps_lib,$(COMMON_PATH):libudfps_extension.sm7225)
+
 # Inherit proprietary blobs
 $(call inherit-product, vendor/samsung/sm7225-common/sm7225-common-vendor.mk)
