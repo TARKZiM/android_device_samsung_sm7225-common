@@ -211,6 +211,9 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
     android.hardware.gatekeeper@1.0-service
 
+# Init
+$(call soong_config_set,libinit,vendor_init_lib,//$(COMMON_PATH):libinit_sm7225)
+
 # Network
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.1.vendor
