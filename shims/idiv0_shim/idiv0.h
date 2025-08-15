@@ -13,10 +13,15 @@
  *===----------------------------------------------------------------------===*/
 #pragma once
 #include <signal.h>
+#include <stdio.h>
+#include <stdint.h>
 extern "C" {
 #ifdef __ARM_EABI__
 extern int __aeabi_idiv0(void);
 extern int __aeabi_uidiv0(void);
 extern uint64_t __aeabi_uidiv(uint64_t numerator, uint64_t denominator);
+extern int __aeabi_idiv(int numerator, int denominator);
+extern uint64_t __aeabi_uidivmod(uint64_t numerator, uint64_t denominator);
+extern int __srget(FILE *stream);
 #endif
 }
