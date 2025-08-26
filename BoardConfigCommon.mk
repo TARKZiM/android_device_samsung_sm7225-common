@@ -72,10 +72,10 @@ BOARD_BOOTIMG_HEADER_VERSION := 2
 
 # Kernel Clang Flags
 KERNEL_CC := CC=clang
-override KERNEL_TOOLCHAIN_PREFIX_arm := arm-linux-android-
 
 TARGET_KERNEL_CLANG_VERSION := r416183b
 TARGET_KERNEL_CLANG_PATH := $(abspath .)/prebuilts/clang/kernel/$(HOST_PREBUILT_TAG)/clang-$(TARGET_KERNEL_CLANG_VERSION)
+KERNEL_TOOLCHAIN_PREFIX := aarch64-linux-gnu-
 
 BOARD_KERNEL_BASE            := 0x00000000
 BOARD_KERNEL_PAGESIZE        := 4096
