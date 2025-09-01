@@ -253,13 +253,9 @@ PRODUCT_PACKAGES += \
 
 $(call soong_config_set,samsungVars,target_keymaster4_library,//vendor/samsung/sm7225-common:libskeymaster4device)
 
-# Light
-PRODUCT_PACKAGES += \
-    android.hardware.light-V1-ndk_platform.vendor:64
-
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service.samsung-qcom.sm7225
+    vendor.lineage.livedisplay-service.samsung-qcom
 
 # Media
 PRODUCT_COPY_FILES += \
