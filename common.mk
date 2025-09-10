@@ -115,7 +115,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.5-service.samsung \
     libgrallocusage.vendor \
+    vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0.vendor \
+    vendor.qti.hardware.camera.postproc@1.0.vendor \
     android.frameworks.sensorservice@1.0.vendor
 
 # CAS
@@ -151,6 +153,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0.vendor \
     android.hardware.graphics.mapper@2.1.vendor \
     android.hardware.graphics.mapper@3.0.vendor \
+    libdrm.vendor \
     libtinyxml \
     libtinyxml2 \
     libqdMetaData \
@@ -160,6 +163,13 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     vendor.qti.hardware.display.mapper@4.0.vendor \
     vendor.qti.hardware.memtrack-service \
+    vendor.display.config@1.0.vendor \
+    vendor.display.config@1.1.vendor \
+    vendor.display.config@1.11.vendor \
+    vendor.display.config@1.5 \
+    vendor.display.config@1.9 \
+    vendor.display.config@1.9.vendor \
+    vendor.display.config@2.0 \
     vendor.display.config@2.0.vendor
 
 # Doze
@@ -342,10 +352,21 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
+# Protobuf
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-3.9.1-vendorcompat \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-3.9.1-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
+
 # QMI
 PRODUCT_PACKAGES += \
     libjson \
     libsqlite.vendor
+
+# QTI fwk-detect
+PRODUCT_PACKAGES += \
+    libqti_vndfwk_detect.vendor
 
 # Radio
 PRODUCT_PACKAGES += \
@@ -360,6 +381,9 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
+    vendor.samsung.hardware.radio@2.0.vendor \
+    vendor.samsung.hardware.radio@2.1.vendor \
+    vendor.samsung.hardware.radio@2.2.vendor \
     libxml2 \
     librilutils \
     librmnetctl \
@@ -404,6 +428,8 @@ PRODUCT_COPY_FILES += \
 # Tether
 PRODUCT_PACKAGES += \
     ipacm \
+    libipanat \
+    liboffloadhal \
     IPACM_cfg.xml \
     android.hardware.tetheroffload.config@1.0.vendor  \
     android.hardware.tetheroffload.control@1.0.vendor
