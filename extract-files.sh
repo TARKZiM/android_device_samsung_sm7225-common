@@ -69,13 +69,13 @@ function blob_fixup() {
             # Replace SlotID prop
             sed -i 's/ril.dds.call.ongoing/vendor.calls.ongoing/g' "${2}"
             ;;
-        vendor/lib64/hw/gatekeeper.mdfpp.so|vendor/lib64/libskeymaster4device.so|vendor/lib64/libkeymaster_helper.so|vendor/lib/libwvhidl.so)
+        vendor/lib64/hw/gatekeeper.mdfpp.so|vendor/lib64/libskeymaster4device.so|vendor/lib64/libkeymaster_helper.so|vendor/lib/libwvhidl.so|vendor/lib/mediadrm/libwvdrmengine.so)
             "${PATCHELF}" --replace-needed "libcrypto.so" "libcrypto-v33.so" "${2}"
             ;;
         vendor/lib64/unihal_main@2.1.so|vendor/lib64/libscaler_hw.unifunc.so|vendor/lib/libscaler_hw.unifunc.so)
             "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
             ;;
-        vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so)
+        vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so|vendor/bin/hw/vendor.samsung.hardware.light-service)
             "${PATCHELF}" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
             ;;
         vendor/lib/libsynaFpSensorTestNwd.so|vendor/lib64/libsynaFpSensorTestNwd.so)

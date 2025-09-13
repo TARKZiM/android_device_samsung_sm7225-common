@@ -150,6 +150,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     gralloc.qcom \
     vendor.qti.hardware.display.allocator-service \
+    vendor.qti.hardware.display.composer-service \
     android.hardware.renderscript@1.0-impl \
     android.hardware.graphics.composer@2.1.vendor \
     android.hardware.graphics.composer@2.2.vendor \
