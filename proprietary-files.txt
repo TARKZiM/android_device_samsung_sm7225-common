@@ -204,11 +204,11 @@ vendor/lib64/libgsl.so
 vendor/lib64/libhistogram.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libqservice.so
-vendor/lib64/libsdedrm.so
+# vendor/lib64/libsdedrm.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmcore.so
+# vendor/lib64/libsdmcore.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libsdmutils.so
 vendor/lib64/libtinyxml2_1.so
@@ -660,7 +660,6 @@ vendor/lib/libsystem_health_mon.so
 # vendor/lib/libvideobeauty_interface.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
-vendor/lib64/hw/vendor.samsung.hardware.camera.provider@4.0-impl.so;DISABLE_CHECKELF
 vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
 vendor/lib64/hw/vendor.samsung.hardware.snap@1.2-impl.so
 vendor/lib64/btaudio_offload_if.so
