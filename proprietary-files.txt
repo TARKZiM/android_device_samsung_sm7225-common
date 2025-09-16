@@ -1,4 +1,4 @@
-# Unpinned blobs from a42xqxx-user 12 SP1A.210812.016 A426BXXU3DVE2 release-keys
+# Unpinned blobs from a42xqxx-user 12 SP1A.210812.016 A426BXXU8DXG2 release-keys
 
 # ACDB
 vendor/etc/acdbdata/adsp_avs_config.acdb
@@ -25,8 +25,6 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libsnpe_dsp_v66_domains_v2_skel.so
 vendor/lib/rfsa/adsp/libsns_device_mode_skel.so
 vendor/lib/rfsa/adsp/libsns_low_lat_stream_skel.so;DISABLE_CHECKELF
-# vendor/lib64/rfsa/adsp/libsns_device_mode_skel.so
-# vendor/lib64/rfsa/adsp/libsns_low_lat_stream_skel.so
 
 # ANT
 vendor/lib/com.qualcomm.qti.ant@1.0.so
@@ -151,7 +149,7 @@ vendor/lib64/libuniplugin.so
 vendor/lib64/unihal_cutils@2.1.so
 vendor/lib64/unihal_main@2.1.so
 vendor/lib64/unihal_uniplugin@1.0.so
-vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so
+vendor/lib64/vendor.qti.hardware.camera.postproc@1.0-service-impl.so|ca1f5520f940b5e8b7a66a25af11eb0daa76ec86
 
 # Camera
 vendor/lib/libc++_shared.so
@@ -471,20 +469,6 @@ vendor/etc/init/netmgrd.rc
 vendor/etc/init/ssgtzd.rc
 vendor/etc/init/vendor.qti.rmt_storage.rc
 vendor/etc/init/vendor.qti.tftp.rc
-# vendor/lib/libconfigdb.so
-# vendor/lib/libdsi_netctrl.so
-# vendor/lib/libidl.so
-# vendor/lib/libnetmgr.so
-# vendor/lib/libnetmgr_common.so
-# vendor/lib/libqcmaputils.so
-# vendor/lib/libqdi.so
-# vendor/lib/libqmi.so
-# vendor/lib/libqmi_client_helper.so
-# vendor/lib/libqmi_client_qmux.so
-# vendor/lib/libqmi_csi.so
-# vendor/lib/libqmiservices.so
-# vendor/lib/libqsocket.so
-# vendor/lib/libxml.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -660,35 +644,20 @@ vendor/lib/libops.so
 vendor/lib/libpadm.so
 vendor/lib/libperfioctl.so
 vendor/lib/libpvr.so
-# vendor/lib/libqdma_file_agent.so
-# vendor/lib/libqdp.so
 vendor/lib/libqisl.so
-# vendor/lib/libqmi_csvt_srvc.so
 vendor/lib/libqsap_sdk.so
 vendor/lib/libqti-iopd.so
-# vendor/lib/libqti-perfd.so
 vendor/lib/libqtigef.so
 vendor/lib/librpmb.so
-# vendor/lib/libscaler_hw.unifunc.so
 vendor/lib/libsdsprpc.so;DISABLE_CHECKELF
 vendor/lib/libsecaudiocoreutils.so
 vendor/lib/libsecureui.so
 vendor/lib/libsecureui_svcsock.so
-# vendor/lib/libsegmentationeffect.uniplugin@1.0.so
-# vendor/lib/libsns_device_mode_stub.so
-# vendor/lib/libsns_low_lat_stream_stub.so;DISABLE_CHECKELF
-# vendor/lib/libsns_registry_skel.so
-# vendor/lib/libsocial_image_enhancement.uniplugin@1.0.so
-# vendor/lib/libssc_default_listener.so;DISABLE_CHECKELF
 vendor/lib/libssd.so
-# vendor/lib/libsuper_night_interface.so
 vendor/lib/libsurround_3mic_proc.so
 vendor/lib/libswregistrationalgo.so
-# vendor/lib/libsynergy_loc_api.so
 vendor/lib/libsysmon_cdsp_skel.so
 vendor/lib/libsystem_health_mon.so
-# vendor/lib/libvideobeauty.uniplugin@1.0.so
-# vendor/lib/libvideobeauty_interface.so
 vendor/lib/vendor.samsung.hardware.bluetooth.a2dp@1.0.so
 vendor/lib64/hw/vendor.samsung.hardware.bluetooth.a2dp@1.0-impl.so
 vendor/lib64/hw/vendor.samsung.hardware.gnss@2.0-impl-sec.so
