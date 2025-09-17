@@ -78,9 +78,6 @@ function blob_fixup() {
         vendor/lib64/vendor.samsung.hardware.light-V1-ndk_platform.so|vendor/bin/hw/vendor.samsung.hardware.light-service)
             "${PATCHELF}" --replace-needed "android.hardware.light-V1-ndk_platform.so" "android.hardware.light-V1-ndk.so" "${2}"
             ;;
-        vendor/lib/libsynaFpSensorTestNwd.so|vendor/lib64/libsynaFpSensorTestNwd.so)
-            "${PATCHELF}" --add-needed "libshim_idiv0.so" "${2}"
-            ;;
         *)
             return 1
             ;;

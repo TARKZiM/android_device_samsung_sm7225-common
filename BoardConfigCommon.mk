@@ -156,7 +156,6 @@ $(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
 
 # FOD
 TARGET_USES_FOD_ZPOS := true
-TARGET_SEC_FP_REQUEST_TOUCH_EVENT := true
 
 # Display
 TARGET_ADDITIONAL_GRALLOC_10_USAGE_BITS := 0x2000U | 0x400000000LL
