@@ -163,15 +163,6 @@ $(RFS_APQ_GNSS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 	$(hide) ln -sf /vendor/firmware_mnt $@/readonly/firmware
 	$(hide) ln -sf /vendor/firmware $@/readonly/vendor/firmware
 
-EGL_LIBS := libq3dtools_adreno.so libGLESv2_adreno.so libEGL_adreno.so
-
-EGL_64_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR)/lib64/,$(notdir $(EGL_LIBS)))
-$(EGL_64_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "EGL lib link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf egl/$(notdir $@) $@
-
 ALL_DEFAULT_INSTALLED_MODULES += \
     $(RFS_MSM_ADSP_SYMLINKS) \
     $(RFS_MSM_CDSP_SYMLINKS) \
@@ -182,7 +173,6 @@ ALL_DEFAULT_INSTALLED_MODULES += \
     $(RFS_MDM_MPSS_SYMLINKS) \
     $(RFS_MDM_SLPI_SYMLINKS) \
     $(RFS_MDM_TN_SYMLINKS) \
-    $(RFS_APQ_GNSS_SYMLINKS) \
-    $(EGL_64_SYMLINKS)
+    $(RFS_APQ_GNSS_SYMLINKS)
 
 endif
