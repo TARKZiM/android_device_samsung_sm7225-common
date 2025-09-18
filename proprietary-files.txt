@@ -553,7 +553,6 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0.so
 vendor/bin/cnss-daemon
 
 # Wi-Fi firmware
-vendor/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini
 vendor/firmware/wlan/qca_cld/bdwlan.bin
 vendor/firmware/wlan/qca_cld/regdb.bin
 
