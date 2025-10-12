@@ -25,10 +25,10 @@ cc_binary {
     ],
     shared_libs: [
         "libbase",
+        "libbinder_ndk",
         "libbinder",
-        "libhidlbase",
         "libutils",
-        "vendor.lineage.livedisplay@2.0",
+        "vendor.lineage.livedisplay-V1-ndk",
     ],
     vendor: true,
 }
