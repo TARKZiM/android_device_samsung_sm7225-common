@@ -725,7 +725,6 @@ vendor/lib64/libhandgesture.arcsoft.so
 vendor/lib64/libhdrdynamic.so
 vendor/lib64/libhdrdynamicootf.so
 vendor/lib64/libhigh_dynamic_range_bokeh.so
-vendor/lib64/libhyper.so
 vendor/lib64/libhypermotion_core.so
 vendor/lib64/libhypermotion_interface.so
 vendor/lib64/libhypervintf.so
