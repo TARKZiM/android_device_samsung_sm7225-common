@@ -1,1 +1,3 @@
 allow vendor_per_mgr sysfs_npu:file { read open };
+
+allow vendor_per_mgr sysfs:file { read open };

@@ -1,0 +1,16 @@
+allow hal_thermal_default sysfs_thermal:file getattr;
+
+allow hal_thermal_default sysfs_battery:dir search;
+allow hal_thermal_default sysfs_battery:file { read open getattr };
+
+allow hal_thermal_default sysfs_battery:lnk_file read;
+
+allow hal_thermal_default sysfs_power_writable:file { read open };
+
+allow hal_thermal_default hal_thermal_samsung_hwservice:hwservice_manager { add find };
+
+allow hal_thermal_default fwk_camera_hwservice:hwservice_manager find;
+
+binder_call(hal_thermal_default, cameraserver)
+
+hal_client_domain(hal_thermal_default, hal_audio)

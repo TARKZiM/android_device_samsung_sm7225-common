@@ -1,9 +1,16 @@
-# init.te
-
-allow init proc_last_kmsg:file setattr;
+allow init proc_last_kmsg:file { setattr };
 
 # /sys/kernel/tracing
-allow init debugfs_tracing_debug:dir mounton;
+allow init debugfs_tracing_debug:dir { mounton };
 
 # /mnt/vendor/efs
-allow init efs_file:dir mounton;
+allow init efs_file:dir { mounton };
+allow init sec_efs_file:dir mounton;
+
+allow init spu_file:dir mounton;
+
+allow init same_process_hal_file:file { execute };
+
+allow init servicemanager:binder { call transfer };
+
+allow init system_server:binder call;

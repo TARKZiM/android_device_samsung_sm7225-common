@@ -1,11 +1,19 @@
-# hal_keymaster_default
-
 # /mnt/vendor
 allow hal_keymaster_default mnt_vendor_file:dir search;
+allow hal_keymaster_default keymaster_vendor_data_file:dir { create_dir_perms watch watch_reads };
+allow hal_keymaster_default keymaster_vendor_data_file:file { create_file_perms watch watch_reads };
 
 # /mnt/vendor/efs
 allow hal_keymaster_default efs_file:dir search;
+allow hal_keymaster_default sec_efs_file:dir r_dir_perms;
+
+# /data/vendor/keymaster
+allow hal_keymaster_default vendor_keymaster_data_file:dir { create_dir_perms watch watch_reads };
+allow hal_keymaster_default vendor_keymaster_data_file:file { create_file_perms watch watch_reads };
 
 # /mnt/vendor/efs/DAK/
 allow hal_keymaster_default prov_efs_file:dir search;
-allow hal_keymaster_default prov_efs_file:file { read open getattr };
+allow hal_keymaster_default prov_efs_file:file r_file_perms;
+r_dir_file(hal_keymaster_default, dak_efs_file)
+
+set_prop(hal_keymaster_default, ctl_start_prop)

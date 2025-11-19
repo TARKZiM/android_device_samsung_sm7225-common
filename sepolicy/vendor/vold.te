@@ -1,1 +1,13 @@
-allow vold efs_file:dir { read open ioctl };
+allow vold {
+    carrier_file
+    efs_file
+    sec_efs_file
+    spu_file
+}:dir create_dir_perms;
+
+allow vold {
+    carrier_file
+    efs_file
+    sec_efs_file
+    spu_file
+}:file create_file_perms;

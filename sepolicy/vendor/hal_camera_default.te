@@ -6,9 +6,30 @@ allow hal_camera_default app_efs_file:dir search;
 allow hal_camera_default sysfs_camera:file { read open getattr };
 allow hal_camera_default sysfs_camera:dir search;
 allow hal_camera_default sysfs_camera_writable:file { read write open getattr };
+allow hal_camera_default rild:unix_stream_socket connectto;
 
 binder_call(hal_camera_default, system_server)
-# get_prop(hal_camera_default, vendor_mpctl_prop)
+get_prop(hal_camera_default, vendor_mpctl_prop)
+set_prop(hal_camera_default, sec_camera_prop)
 
 # EFS
 allow hal_camera_default efs_file:dir search;
+
+allow hal_camera_default mnt_vendor_file:dir search;
+
+allow hal_camera_default sysfs_oem_memory:file { getattr open read write };
+
+allow hal_camera_default hal_system_suspend_service:service_manager find;
+allow hal_camera_default hal_thermal_samsung_hwservice:hwservice_manager find;
+
+allow hal_camera_default sysfs_oem_memory:file { getattr open read write };
+
+r_dir_file(hal_camera_default, app_efs_file)
+r_dir_file(hal_camera_default, efs_file)
+r_dir_file(hal_camera_default, mnt_vendor_file)
+r_dir_file(hal_camera_default, vendor_sysfs_camera)
+r_dir_file(hal_camera_default, vendor_sysfs_sensors)
+
+binder_call(hal_camera_default, hal_thermal_default)
+
+dontaudit hal_camera_default default_prop:file read;

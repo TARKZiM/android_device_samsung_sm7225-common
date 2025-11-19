@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 # Audio
 system_public_prop(vendor_samsung_audio_prop)
 
 # Fingerprint
 system_public_prop(vendor_fingerprint_prop)
+=======
+system_public_prop(sec_camera_prop)
+system_public_prop(sns_camera_light_prop)
+>>>>>>> cd62b250 (sm7225-common: Bringup enforcing SELinux)

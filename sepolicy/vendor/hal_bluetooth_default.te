@@ -2,13 +2,12 @@
 allow hal_bluetooth_default bluetooth_efs_file:file { read open getattr };
 allow hal_bluetooth_default efs_file:dir search;
 
-# set_prop(hal_bluetooth_default, vendor_bluetooth_prop)
-# get_prop(hal_bluetooth_default, vendor_bluetooth_prop)
-get_prop(hal_bluetooth_default, exported_bluetooth_prop)
+set_prop(hal_bluetooth_default, vendor_bluetooth_prop)
 
 allow hal_bluetooth_default self:file { read getattr map open };
 
-allow hal_bluetooth_default hci_attach_dev:chr_file { ioctl read write getattr lock append map open watch watch_reads };
+allow hal_bluetooth_default sec_efs_file:dir r_dir_perms;
+
 allow hal_bluetooth_default serial_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 allow hal_bluetooth_default tun_device:chr_file { ioctl read write getattr lock append map open watch watch_reads };
 

@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 allow hal_gatekeeper_default gatekeeper_vendor_data_file:dir { read open };
+=======
+allow hal_gatekeeper_default gatekeeper_vendor_data_file:dir r_dir_perms;
+>>>>>>> cd62b250 (sm7225-common: Bringup enforcing SELinux)

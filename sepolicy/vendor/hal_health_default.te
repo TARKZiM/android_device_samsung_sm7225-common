@@ -1,6 +1,7 @@
 # /sys/devices/platform/soc/soc:battery/power_supply/*
 allow hal_health_default sysfs_battery:file r_file_perms;
-allow hal_health_default sysfs_battery:dir search;
+allow hal_health_default sysfs_battery:dir r_dir_perms;
+allow hal_health_default sysfs_battery:lnk_file read;
 
 # /efs/Battery
 allow hal_health_default battery_efs_file:dir r_dir_perms;
@@ -11,3 +12,11 @@ allow hal_health_default app_efs_file:dir { read write add_name search };
 allow hal_health_default app_efs_file:file { read write open create getattr setattr };
 
 allow hal_health_default efs_file:dir search;
+
+# Thermal
+allow hal_health_default hal_thermal_samsung_hwservice:hwservice_manager find;
+binder_call(hal_health_default, hal_thermal_default)
+
+# SysFS Wakeup
+allow hal_health_default sysfs_wakeup:file r_file_perms;
+allow hal_health_default sysfs_wakeup:dir r_dir_perms;

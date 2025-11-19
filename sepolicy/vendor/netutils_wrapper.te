@@ -4,7 +4,12 @@ allow netutils_wrapper rild:file read;
 allow netutils_wrapper rild:unix_stream_socket { read write };
 allow netutils_wrapper tun_device:chr_file { read write };
 allow netutils_wrapper rild:netlink_route_socket { read write };
+allow netutils_wrapper rild:netlink_xfrm_socket { read write };
+allow netutils_wrapper rild:netlink_generic_socket { read write };
 allow netutils_wrapper rild:udp_socket { read write };
+allow netutils_wrapper rild:tcp_socket { read write };
+
+allow netutils_wrapper tun_device:chr_file rw_file_perms;
 
 # /dev/drb
 allow netutils_wrapper drb_device:chr_file { read write };
@@ -14,3 +19,7 @@ allow netutils_wrapper proc_net:file write;
 
 # /mnt/vendor/efs/mps_code.dat
 allow netutils_wrapper efs_file:file { read write };
+
+allow netutils_wrapper sec_efs_file:file rw_file_perms;
+
+dontaudit netutils_wrapper imei_efs_file:file read;

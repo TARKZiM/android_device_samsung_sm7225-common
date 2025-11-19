@@ -1,1 +1,3 @@
 allow vendor_per_proxy sysfs_npu:file { read open };
+
+allow vendor_per_proxy sysfs:file { read open };

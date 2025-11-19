@@ -1,4 +1,8 @@
 allow fsck self:capability kill;
 
-# EFS
-allow fsck { efs_block_device sec_efs_block_device }:blk_file rw_file_perms;
+allow fsck {
+    efs_block_device
+    omr_block_device
+    sec_efs_block_device
+    spu_block_device
+}:blk_file rw_file_perms;
