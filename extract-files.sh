@@ -82,6 +82,9 @@ function blob_fixup() {
             sed -i 's/vendor\.wifi\.dualconcurrent\.interface/vnedor\.wiff\.dualconcurreut\.iuterface/g' "${2}"
             sed -i 's/ro\.vendor\.wifi\.sap\.interface/ru\.vnedor\.wiff\.sep\.iuterface/g' "${2}"
             ;;
+        vendor/lib64/libdpps.so)
+            "${PATCHELF}" --replace-needed "libtinyxml2.so" "libtinyxml2-v34.so" "${2}"
+            ;;
         *)
             return 1
             ;;

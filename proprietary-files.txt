@@ -229,7 +229,7 @@ vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437
 -vendor/lib64/libdisp-aba.so|894b0fe1ace5effb471ebb7437cd590a096e47d8
 -vendor/lib64/libdisplayqos.so|15701f18257c43be5657bbd867a8acf1f469e373
 -vendor/lib64/libdisplayskuutils.so|ac4f2231f098c03824844799106685bf81f97782
--vendor/lib64/libdpps.so|02538edc4f214b3d6018031aa8460efbc1760223
+-vendor/lib64/libdpps.so|02538edc4f214b3d6018031aa8460efbc1760223|68e9af103c2a3ca0975e37b0bccca9431f157fd3
 -vendor/lib64/libgpudataproducer.so|c74e90e288eff83cde6ec7c132dd13f67f418af7
 -vendor/lib64/libgsl.so|4b61df0a0829a3a8039bc2d73b369d9bbc8ac678
 -vendor/lib64/libhdr_tm.so|4be3cfff1ef40cbc6ad329b79c60881263aa6723
