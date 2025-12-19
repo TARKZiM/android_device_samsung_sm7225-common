@@ -113,6 +113,8 @@ PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0.vendor
 
 # Camera
+$(call soong_config_set_bool,samsungCameraVars,needs_sec_reserved_field,true)
+
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider-service.samsung \
     libgrallocusage.vendor \

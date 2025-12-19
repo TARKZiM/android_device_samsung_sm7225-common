@@ -151,9 +151,6 @@ BOARD_SUPPORTS_SOUND_TRIGGER := true
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth/include
 
-# Camera
-$(call soong_config_set,samsungCameraVars,needs_sec_reserved_field,true)
-
 # FOD
 TARGET_USES_FOD_ZPOS := true
 
