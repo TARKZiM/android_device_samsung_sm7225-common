@@ -248,6 +248,9 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
+# IMS
+$(call inherit-product, hardware/lineage/generic-ims/ims.mk)
+
 # Keylayout
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/keylayout/sec_touchscreen.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sec_touchscreen.kl
@@ -435,13 +438,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator-service.sm7225
-
-#PRODUCT_PACKAGES += \
-#    PhhIms \
-#    PhhImsOverlay
-
-PRODUCT_COPY_FILES += \
-    $(COMMON_PATH)/configs/privapp-permissions-phhims.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-phhims.xml
 
 # Tether
 PRODUCT_PACKAGES += \
