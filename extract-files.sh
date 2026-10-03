@@ -64,11 +64,6 @@ fi
 
 function blob_fixup() {
     case "${1}" in
-        vendor/lib64/libsec-ril.so)
-            [ "$2" = "" ] && return 0
-            # Replace SlotID prop
-            sed -i 's/ril.dds.call.ongoing/vendor.calls.ongoing/g' "${2}"
-            ;;
         vendor/lib/hw/audio.primary.lito.so)
             "${PATCHELF}" --add-needed "libshim_samsungaudioparams.so" "${2}"
             sed -i 's/str_parms_get_int/str_parms_get_mod/g' "${2}"
