@@ -2,5 +2,7 @@
 <permissions>
     <privapp-permissions package="me.phh.ims">
         <permission name="android.permission.READ_PRIVILEGED_PHONE_STATE"/>
+        <permission name="android.permission.MODIFY_PHONE_STATE"/>
+        <permission name="android.permission.SCHEDULE_EXACT_ALARM"/>
     </privapp-permissions>
 </permissions>
