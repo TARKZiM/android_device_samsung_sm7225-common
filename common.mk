@@ -311,6 +311,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# Overlays
+PRODUCT_PACKAGES += \
+    CarrierSettingsOverlayCommon
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
